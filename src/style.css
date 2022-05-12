@@ -1,0 +1,73 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.searchbar{
+    width: 350px;
+    margin-left: 22%;
+}
+.searchbut{
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    border: none;
+}
+.row{
+    border: 1px solid rgb(187, 185, 185);
+    border-radius: 15px;
+    background-color: aliceblue;
+    padding: 10px;
+    margin: 0px auto;
+}
+.imgtop{
+    width: 100%;
+    padding: 20px;
+}
+.category{
+    margin: 10px 0px;
+}
+.card{
+    width: 160px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+.cardTitle{
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    padding: 20px;
+    font-size: 1rem;
+    margin: 0;
+}
+.cartBtn{
+    margin-left: 15px;
+    margin-bottom:  10px ;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(230, 137, 62);
+    background-color: rgb(230, 137, 62);
+    padding: 5px 10px;
+    color: white;
+}
+.card:hover{
+    cursor: pointer;
+    box-shadow: 1px -2px 36px rgb(145, 144, 144);
+}
+.rate{
+    padding-left: 0px;
+}
+.rateOff{
+    color: rgb(7, 160, 7);
+    font-size: small;
+    padding-left: 5px;
+}
+.footer{
+    background-color: rgb(202, 201, 201);
+    padding: 20px 50px;
+    margin-top: 50px;
+}
+.footer-item{
+    justify-content: space-around;
+    display: flex;
+}

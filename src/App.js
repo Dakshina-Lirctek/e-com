@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{ useState } from 'react'
+import Content from './components/ui/content';
+import Cart from './components/cart/cart';
 
-function App() {
+export default function App() {
+    const [itemDetails, setItemDetails] = useState([]);
+    const [show, setShow] = useState(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       {show?  <Content setItemDetails ={setItemDetails} setShow={setShow} itemDetails = {itemDetails}/> : <Cart setItemDetails={setItemDetails} setShow={setShow} itemDetails = {itemDetails}/>}
     </div>
-  );
+  )
 }
-
-export default App;
