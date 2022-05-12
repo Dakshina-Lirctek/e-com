@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge } from 'antd';
 
-export default function NavBar({setShow, products}) {
+export default function NavBar({setShow, itemDetails}) {
 
   function handleClick() {
     console.log('hiii')
@@ -42,11 +42,11 @@ export default function NavBar({setShow, products}) {
               </button>
             </div>
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item pe-4">
+              <li className="nav-item pe-4" onClick={()=>{setShow(true); console.log('hello')}}>
                 Home<i class="fa-solid fa-house-chimney-window"></i>
               </li>
               <li className="nav-item pe-4"  onClick={handleClick}>
-              <Badge count={products.length} style={{backgroundColor:"red", padding:5, borderRadius:80}}>
+              <Badge count={itemDetails.length} style={{backgroundColor:"red", padding:5, borderRadius:80}}>
                 Cart<i class="fa-solid fa-cart-shopping ps-2"></i>
               </Badge>
               </li>

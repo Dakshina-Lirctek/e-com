@@ -1,14 +1,12 @@
 import React from 'react';
-import NavBar from './navBar';
 import Footer from './footer';
 import { products } from '../products/products';
 import { Card } from 'antd';
 
-export default function Content({setItemDetails, itemDetails, setShow}) {  
+export default function Content({setItemDetails, itemDetails}) {  
 
   return (
     <>
-      <NavBar products={itemDetails} setShow={setShow}/>
     <div className='container'>
          
           <h1 className='category'>women's clothing</h1>
