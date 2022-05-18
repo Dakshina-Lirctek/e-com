@@ -4,12 +4,18 @@
 }
 .searchbar{
     width: 350px;
-    margin-left: 22%;
+    margin-left: 70%;
+    border: 1px solid rgb(192, 192, 192);
+    padding: 5px 10px;
 }
 .searchbut{
     background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(192, 192, 192);
     outline: none;
-    border: none;
+    padding: 6px;
+}
+#navbarSupportedContent{
+    margin-left: 35%;
 }
 li{
     cursor: pointer;

@@ -1,9 +1,27 @@
-import React from 'react';
-import Footer from './footer';
-import { products } from '../products/products';
+import React ,{useState, useEffect} from 'react';
+import axios from 'axios';
 import { Card } from 'antd';
 
+
 export default function Content({setItemDetails, itemDetails}) {  
+
+  const [products, setProducts] = useState('');
+
+  const productDetails = async() => {
+    try{
+      const data = await axios.get('https://fakestoreapi.com/products');
+      setProducts(data.data);
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
+  
+  useEffect(()=>{
+    productDetails();
+  },[])
+  
+  console.log(products);
 
   return (
     <>
@@ -12,14 +30,14 @@ export default function Content({setItemDetails, itemDetails}) {
           <h1 className='category'>women's clothing</h1>
           <div className='row container'>
         {
-            products.map((data, i) => {
+            products && products.map((data, i) => {
                if(data.category === "women's clothing")
                {
                  return(
       
                   <Card
                   className='card col-xl-2 col-md-4 col-sm-12'
-                  hoverable
+
                   cover={<img alt="example" src={data.image} style={{ width: 140, height: 150}}/>}
                 >
                   <p className='cardTitle'>{data.title}</p>
@@ -40,7 +58,7 @@ export default function Content({setItemDetails, itemDetails}) {
           <h1 className='category'>Electronics</h1>
           <div className='row container'>
         {
-            products.map((data, i) => {
+            products && products.map((data, i) => {
                if(data.category === "electronics")
                {
                  return(
@@ -69,7 +87,7 @@ export default function Content({setItemDetails, itemDetails}) {
           <h1 className='category'>Jewelery</h1>
           <div className='row container'>
         {
-            products.map((data, i) => {
+            products && products.map((data, i) => {
                if(data.category === "jewelery")
                {
                  return(
@@ -98,7 +116,7 @@ export default function Content({setItemDetails, itemDetails}) {
           <h1 className='category'>Men's clothing</h1>
           <div className='row container'>
         {
-            products.map((data, i) => {
+            products && products.map((data, i) => {
                if(data.category === "men's clothing")
                {
                  return(
@@ -125,7 +143,6 @@ export default function Content({setItemDetails, itemDetails}) {
         }
         </div>
     </div>
-        <Footer/>
     </>
   )
 }

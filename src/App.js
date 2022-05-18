@@ -1,15 +1,33 @@
-import React,{ useState } from 'react'
-import Content from './components/ui/content';
-import Cart from './components/cart/cart';
+import React, { useState } from 'react';
 import NavBar from './components/ui/navBar';
+import Content from './components/ui/content';
+import Footer from './components/ui/footer';
+import Cart from './components/ui/cart';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom'
 
 export default function App() {
-    const [itemDetails, setItemDetails] = useState([]);
-    const [show, setShow] = useState(true)
+    const [itemDetails, setItemDetails] = useState([])
   return (
     <div>
-        <NavBar itemDetails={itemDetails} setShow={setShow}/>
-       {show?  <Content setItemDetails ={setItemDetails} setShow={setShow} itemDetails = {itemDetails}/> : <Cart setItemDetails={setItemDetails} setShow={setShow} itemDetails = {itemDetails}/>}
+        <NavBar itemDetails={itemDetails}/>
+        
+        <Router>
+          <Routes>
+            
+          <Route exact path='/' element={<Content itemDetails={itemDetails} setItemDetails={setItemDetails}/>}></Route>
+
+          <Route exact path='/cart' element={< Cart />}></Route>
+              
+          </Routes>
+        </Router>
+
+        <Footer/>
+
     </div>
   )
 }
