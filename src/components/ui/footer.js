@@ -2,8 +2,9 @@ import React from "react";
 
 export default function Footer() {
   return (
+    <div position-absolute top-100>
     <div className="footer container-fluid">
-      <div className="footer-item container">
+      <div className="footer-item container text-start">
         <div>
           <h6>About</h6>
           <ul>
@@ -49,6 +50,10 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+    </div>
+    <div className="container-fluid bg-dark text-center">
+      <p className=" pt-4 pb-4 text-light mb-0">@2022. <span className="text-danger">suriyashop.</span>, Inc. or its affiliates</p>
+    </div>
     </div>
   );
 }

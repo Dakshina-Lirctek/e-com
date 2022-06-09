@@ -2,9 +2,24 @@
     margin: 0px;
     padding: 0px;
 }
+nav{
+    background-image: linear-gradient(to right bottom, #445590, #4266a6, #3d77bb, #3089d0, #109be5);
+    position: fixed !important;
+    z-index: 100;
+    width: 100%;
+}
+.logo{
+    height: 45px;
+    width: 45px;
+}
+.logo-name{
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 5px 0px;
+}
 .searchbar{
     width: 350px;
-    margin-left: 70%;
+    margin-left: 40%;
     border: 1px solid rgb(192, 192, 192);
     padding: 5px 10px;
 }
@@ -20,12 +35,36 @@
 li{
     cursor: pointer;
 }
-.row{
-    border: 1px solid rgb(187, 185, 185);
-    border-radius: 15px;
-    background-color: aliceblue;
+.nav-togg
+{
+    display: none;
+}
+.navbar-tog
+{
+    display: none;
+}
+.navbar-toggler {
+    border: 1px solid #109be5;
+    outline: #109be5;
+}
+.con-page{
+    background-color: rgb(240, 240, 240);
+}
+.car-img{
+    height: 450px !important;
+}
+.cate
+{
+    border-bottom: 1px solid rgb(187, 185, 185);
+    background-color: white;
     padding: 10px;
     margin: 0px auto;
+}
+.carousel-but{
+    width: 10px !important;
+    height: 10px !important;
+    border: none !important;
+    margin-right: 14px !important;
 }
 .imgtop{
     width: 100%;
@@ -33,11 +72,16 @@ li{
 }
 .category{
     margin: 10px 0px;
+    color:#109be5;
+}
+.category-head{
+    color: #445590;
 }
 .card{
     width: 160px;
     overflow: hidden;
-    margin-left: 20px;
+    margin:5px 10px;
+    border: none;
 }
 .cardTitle{
     width: 150px;
@@ -50,33 +94,129 @@ li{
     margin: 0;
 }
 .cartBtn{
-    margin-left: 15px;
+    width: 100%;
     margin-bottom:  10px ;
     border-radius: 5px;
     outline: none;
-    border: 1px solid rgb(230, 137, 62);
-    background-color: rgb(230, 137, 62);
+    border: none;
+    background-image: linear-gradient(to right bottom, #445590, #4266a6, #3d77bb, #3089d0, #109be5);
     padding: 5px 10px;
     color: white;
 }
+.cartCon
+{
+    background-color: #f1f3f6;
+    padding-top: 200px;
+}
+.count-but{
+    width: 50px;
+    outline: none;
+    border: 1px solid rgb(184, 184, 184);
+}
+.add-but{
+    padding: 0px 4px;
+    outline: none;
+    color: white;
+    border: 1px solid #445590;
+    background-color: #109be5;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.sub-but{
+    padding: 0px 6px;
+    outline: none;
+    color: white;
+    border: 1px solid #445590;
+    background-color: #109be5;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.cart{
+    width: 95%;
+    margin: 0px auto;
+}
 .card:hover{
     cursor: pointer;
-    box-shadow: 1px -2px 36px rgb(145, 144, 144);
+    box-shadow: 2px 4px 16px rgb(206, 190, 190);
+    position:relative;
+    transform: translateY(-10px);
 }
 .rate{
     padding-left: 0px;
+    margin-left: auto;
 }
 .rateOff{
     color: rgb(7, 160, 7);
     font-size: small;
-    padding-left: 5px;
+    padding-left: 2px;
+}
+@media screen and (max-width: 768px) {
+    .cate
+    {
+    border: none;
+    background-color: rgb(248, 248, 248);
+    }
+.card{
+    width: 150px;
+    overflow: hidden;
+    margin:5px 10px;
+    }
+}
+.cart-card:hover{
+    box-shadow: 2px 4px 16px rgb(206, 190, 190);
+    position:relative;
+    transform: translateY(-10px);
+}
+.cart-img{
+    margin: auto ;
+    width: 80px;
+    height: 80px;
+}
+.nav-item a{
+    text-decoration: none;
+}
+.cart-badge
+{
+    margin-top: -10px;
+    position: absolute;
+    font-size: smaller;
+    background-color: red;
+    padding: 3px 6px;
+    margin-left: 2px;
+    border-radius: 50px;
+    color: azure;
+    text-decoration: none;
+}
+.cart-total{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 75px;
+    border: 1px solid rgb(223, 223, 223);
+    width: 35%;
+    height: 200px;
+}
+.star-rate
+{
+    color: rgb(252, 173, 5);
+}
+@media screen and (max-width: 768px) {
+    .cart{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cart-total{
+        width: 85%;
+    }
 }
 .footer{
     background-color: rgb(202, 201, 201);
     padding: 20px 50px;
-    margin-top: 50px;
 }
 .footer-item{
     justify-content: space-around;
     display: flex;
+    flex-wrap: wrap;
+}
+.footer  div  ul{
+    list-style: none;
 }
