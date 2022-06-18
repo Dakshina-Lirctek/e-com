@@ -47,6 +47,9 @@ li{
     border: 1px solid #109be5;
     outline: #109be5;
 }
+.navbar-toggler:focus{
+    box-shadow: 0 0 0 0.25rem transparent;
+}
 .con-page{
     background-color: rgb(240, 240, 240);
 }
@@ -198,6 +201,10 @@ li{
 .star-rate
 {
     color: rgb(252, 173, 5);
+}
+.modalImg{
+    height: 300px;
+    width: 650px;
 }
 @media screen and (max-width: 768px) {
     .cart{

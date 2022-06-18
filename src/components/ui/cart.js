@@ -4,7 +4,9 @@ import Countbtn from './count-btn';
 export default function Cart({itemDetails, setItemDetails}) {
   
   const [total, setTotal] = useState([]);
-  const [amt, setAmt] = useState(0)
+  const [amt, setAmt] = useState(0);
+  const [noItem, setNoItem] = useState([]);
+  const [fitem, setFitem] = useState(0)
 
   const removeItem = (id) => {
     setItemDetails((pre)=>{
@@ -20,10 +22,19 @@ useEffect(()=>{
     return (it.data.cost)
   })) 
 
+  setNoItem(itemDetails.map((it)=>{
+    return (it.data.qty)
+  }))
+
   const totalPrice = Math.ceil(total.reduce(
     (previousValue, currentValue)=>previousValue+currentValue, 
     0))
-   setAmt(totalPrice)
+    setAmt(totalPrice)
+
+  const totalItem = Math.ceil(noItem.reduce(
+    (previousValue, currentValue)=>previousValue+currentValue, 
+    0))
+    setFitem(totalItem);
   },[total])
 
 
@@ -57,7 +68,7 @@ useEffect(()=>{
           </div>
           <div className='container pt-2 mt-5 cart-total bg-light'>
             <h3 className='text-start'>Price Details</h3><hr/>
-            <span className='text-start'>Price({itemDetails.length + "item"})</span><span className='float-end'>${amt}</span><br/>
+            <span className='text-start'>Price({fitem+ " " + "item"})</span><span className='float-end'>${amt}</span><br/>
             <span className='text-start'>Delivery charge</span><span className='float-end'>Free</span><hr/>
             <h5 className='text-end'>total:${amt}</h5>
 

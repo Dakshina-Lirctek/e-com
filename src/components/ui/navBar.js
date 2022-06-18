@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function NavBar({itemDetails}) {
 
+  const [icon, setIcon] = useState(true)
 
 return (
     <>
@@ -12,7 +13,9 @@ return (
         <img className='logo' src='https://www.freepnglogos.com/uploads/shopping-bag-png/shopping-bag-plaseto-bag-plaseto-bags-manufacturer-west-bengal-17.png' alt='logo'/>
          SURIYA SHOP</span>
         <button className="navbar-toggler navbut" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <i className="fa-solid fa-bars" style={{color: "white"}}></i>
+        {
+          icon ? <i onClick={()=>setIcon(!icon)} className="fa-solid fa-bars" style={{color: "white"}}></i> : <i onClick={()=>setIcon(!icon)} className="fa-solid fa-angles-up" style={{color: "white"}}></i>
+        }
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
