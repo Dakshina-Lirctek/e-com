@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Card } from "antd";
+import { useNavigate } from "react-router-dom";
 
 export default function Content({ setItemDetails, itemDetails }) {
   const [products, setProducts] = useState("");
   const [proDetails, setProDetails] = useState("");
+  let navigate = useNavigate();
 
   const productDetails = async () => {
     try {
@@ -97,7 +98,7 @@ export default function Content({ setItemDetails, itemDetails }) {
       <hr />
       <div className="container">
         <h1 className="category">
-          <span className="category-head">women's</span> clothing
+          <span className="category-head">Women's</span> Clothing
         </h1>
         <div className="row cate container">
           {products &&
@@ -124,6 +125,7 @@ export default function Content({ setItemDetails, itemDetails }) {
                     </h3>
                     <button
                       className="cartBtn"
+                      id='addButton'
                       data-bs-toggle="modal"
                       data-bs-target="#staticBackdrop"
                       onClick={() => {
@@ -134,7 +136,9 @@ export default function Content({ setItemDetails, itemDetails }) {
                         });
                         setTimeout(() => {
                           document.querySelector(".btn-close").click();
+                          navigate('/cart')
                         }, 900);
+                        
                       }}
                     >
                       Add to cart
